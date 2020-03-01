@@ -7,8 +7,8 @@ class Monster < Character
     attack_message
 
     damage = @offense - brave.defense
-
     brave.hp -= damage
+    brave.hp = 0 if brave.hp < 0
 
     damage_message(target: brave, damage: damage)
   end
